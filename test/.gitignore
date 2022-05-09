@@ -1,0 +1,12 @@
+*.o
+*.os
+*.so
+*.exe
+*.obj
+*.lib
+*.dll
+*.exp
+*.idb
+*.pdb
+.sconsign.dblite
+bin/*
