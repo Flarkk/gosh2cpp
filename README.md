@@ -16,7 +16,7 @@ Shading language versions support
 Currently supports all shading language versions up to Godot 3.4.
 
 However, a few specific features of the language have limited to no support at all.
-See [Limitations](https://github.com/flarkk/gosh2cpp/#Limitations) and [Unsupported shader features](https://github.com/flarkk/gosh2cpp/#Unsupported-shader-features) sections below.
+See [Limitations](#Limitations) and [Unsupported shader features](#Unsupported-shader-features) sections below.
 
 Dependencies
 ------------
