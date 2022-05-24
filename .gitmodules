@@ -1,3 +1,6 @@
 [submodule "test/doctest"]
 	path = test/doctest
 	url = https://github.com/doctest/doctest
+[submodule "boostqvm"]
+	path = boostqvm
+	url = https://github.com/boostorg/qvm
