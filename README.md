@@ -34,7 +34,7 @@ Quick start
 ```c++
 #include "gosh2cpp/gosh2cpp.hpp" // Include gosh2cpp main header
 
-struct MyGodotShader { // Define a struct or class
+struct MyGodotSpatialShader { // Define a struct or class
     #include "gosh2cpp/class_header.inc" // Include gosh2cpp class header
     #include "path/to/your/godot/shader/code.shader" // Include your shader code
     #include "gosh2cpp/class_footer.inc" // Include gosh2cpp class footer
