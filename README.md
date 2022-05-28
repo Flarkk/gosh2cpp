@@ -1,10 +1,10 @@
 Godot shader to C++ 
 ===================
-Include and use any shader code written in [Godot shading language](https://docs.godotengine.org/en/3.4/tutorials/shaders/shader_reference/shading_language.html) into a c++ codebase, as if it was a regular c++ piece of code.
+Include and use any shader code written in [Godot shading language](https://docs.godotengine.org/en/3.4/tutorials/shaders/shader_reference/shading_language.html) into a C++ codebase, as if it was a regular C++ piece of code.
 
 gosh2cpp is especially useful for :
 - unit testing individual functions defined inside a shader
-- executing shader functions on CPU while not having to reimplement the whole logic in c++
+- executing shader functions on CPU while not having to reimplement the whole logic in C++
 
 Benefits
 --------
@@ -15,13 +15,13 @@ Shading language versions support
 ---------------------------------
 Currently supports all shading language versions up to Godot 3.4.
 
-However, a few specific features of the language have limited to no support at all.
+Note that a few specific features of the language have limited support / no support at all.
 See [Limitations](#Limitations) and [Unsupported shader features](#Unsupported-shader-features) sections below.
 
 Dependencies
 ------------
 - [Boost QVM](https://github.com/boostorg/qvm)
-- Requires c++20
+- Requires C++20
 - Unit tests depend on [Doctest](https://github.com/doctest/doctest)
 
 Licence
@@ -136,9 +136,9 @@ All types involving floating point are standard C++ `float` 32 bits types.
 ### Derivative functions
 `dFdx()`, `dFdy()` and `fwidth()` functions always return 0.0.
 
-### Variables named like c++ keywords
+### Variables named as c++ keywords
 These variables are renamed with 3 leading underscores (example : `private` becomes `___private`).
-A few keywords are however not supported at all (see below).
+A few keywords are however not supported at all ([see below](#Variables-names)).
 
 Unsupported shader features
 ---------------------------
@@ -184,8 +184,8 @@ void function_4(inout Custom arg);  // Not supported because of the 'inout'
 ```
 
 ### Variables names
-Variables can't take a name that belongs to the following list :
-`and`, `and_eq`, `bitand`, `bitor`, `compl`, `not`, `not_eq`, `or`, `or_eq`, `this`,  `typename`, `using`, `xor`, `xor_eq`
+Variables can't take a name from the following list :
+`and`, `and_eq`, `bitand`, `bitor`, `compl`, `not`, `not_eq`, `or`, `or_eq`, `this`, `typename`, `using`, `xor`, `xor_eq`
 
 How to contribute
 -----------------
