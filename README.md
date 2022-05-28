@@ -24,11 +24,11 @@ Dependencies
 - Requires C++20
 - Unit tests depend on [Doctest](https://github.com/doctest/doctest)
 
-Licence
+License
 -------
-- gosh2cpp is provided under the MIT licence terms.
+- gosh2cpp is provided under the MIT license terms.
 - [Boost QVM](https://github.com/boostorg/qvm) is provided under the Boost Software License - Version 1.0 terms.
-- [Doctest](https://github.com/doctest/doctest) is provided under the MIT licence terms.
+- [Doctest](https://github.com/doctest/doctest) is provided under the MIT license terms.
 
 Quick start
 -----------
