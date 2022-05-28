@@ -26,7 +26,9 @@ Dependencies
 
 Licence
 -------
-gosh2cpp is provided under the MIT licence terms.
+- gosh2cpp is provided under the MIT licence terms.
+- [Boost QVM](https://github.com/boostorg/qvm) is provided under the Boost Software License - Version 1.0 terms.
+- [Doctest](https://github.com/doctest/doctest) is provided under the MIT licence terms.
 
 Quick start
 -----------
