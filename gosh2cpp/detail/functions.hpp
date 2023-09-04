@@ -284,15 +284,32 @@ auto& operator+=(auto& lhs, const auto& rhs)
 }
 
 //*** scalar + [vec or mat] is not directly supported in boost::qvm. Using the opposite operation instead
-template <scalar S>
-auto operator+(S lhs, auto rhs)
+template <scalar S, vector V>
+auto operator+(S lhs, V rhs)
+{
+	rhs += lhs;
+	return rhs;
+}
+
+template <scalar S, matrix M>
+auto operator+(S lhs, M rhs)
 {
 	rhs += lhs;
 	return rhs;
 }
 
 //*** For all other cases
-auto operator+(auto lhs, const auto& rhs)
+template <scalar U, typename V>
+requires(not vector<V> and not matrix<V>)
+auto operator+(U lhs, const V& rhs)
+{
+	lhs += rhs;
+	return lhs;
+}
+
+template <typename U, typename V>
+requires(not scalar<U>)
+auto operator+(U lhs, const V& rhs)
 {
 	lhs += rhs;
 	return lhs;
@@ -307,7 +324,7 @@ auto operator-(const auto& a)
 	return boost::qvm::operator-(a);
 }
 
-template <gosh2cpp::vector<bool> V>
+template <vector<bool> V>
 auto operator!(const V& v)
 {
 	return detail::apply(v, [](bool a) { return !a; });
@@ -335,15 +352,32 @@ auto& operator-=(auto& lhs, const auto& rhs)
 }
 
 //*** scalar - [vec or mat] is not directly supported in boost::qvm. Using the opposite operation instead
-template <scalar S>
-auto operator-(S lhs, auto rhs)
+template <scalar S, vector V>
+auto operator-(S lhs, V rhs)
+{
+	rhs -= lhs;
+	return -rhs;
+}
+
+template <scalar S, matrix M>
+auto operator-(S lhs, M rhs)
 {
 	rhs -= lhs;
 	return -rhs;
 }
 
 //*** For all other cases
-auto operator-(auto lhs, const auto& rhs)
+template <scalar U, typename V>
+requires(not vector<V> and not matrix<V>)
+auto operator-(U lhs, const V& rhs)
+{
+	lhs -= rhs;
+	return lhs;
+}
+
+template <typename U, typename V>
+requires(not scalar<U>)
+auto operator-(U lhs, const V& rhs)
 {
 	lhs -= rhs;
 	return lhs;
